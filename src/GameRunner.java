@@ -1,27 +1,28 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class GameRunner {
     public static void main (String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Welcome!");
         boolean retry = true;
-        while (retry == true) {
-            Game word = new Game(); //
-            String guessedWord = "";
-            int lives = 6;
-            word.printGuessedLetters();
+        while (retry) {
+            Game word = new Game();
+            word.printGuessedLetters("");
             System.out.println();
-            while (word.win(guessedWord) == false && lives > 0) {
-                System.out.print("Pick a letter: "); //
+            while (!word.win(word.getGuesses()) && word.getLives() > 0) {
+                word.printGame();
                 String guessedLetter = scan.nextLine();
-                guessedWord += guessedLetter;
+                word.addGuess(guessedLetter);
                 if (!(word.inWord(guessedLetter))) {
-                    lives -= 1;
+                    word.loseLife();
                 }
-                word.printGuessedLetters(guessedWord);
-                System.out.println("Lives: " + lives);
             }
-            System.out.println("You Win!");
+            if (word.getLives() != 0) {
+                System.out.println("You Win!");
+            } else {
+                System.out.println("You Lose");
+            }
+            word.printGame();
             System.out.print("Press y to play again: ");
             if (!(scan.nextLine().equals("y"))) {
                 retry = false;

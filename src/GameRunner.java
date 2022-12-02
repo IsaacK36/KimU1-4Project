@@ -1,13 +1,11 @@
-import java.util.Objects;
 import java.util.Scanner;
 
 public class GameRunner {
     public static void main (String[] args) {
         Scanner scan = new Scanner(System.in);
         boolean retry = true;
-        while (retry) {
+        while (retry == true) {
             Game word = new Game();
-            word.printGuessedLetters("");
             System.out.println();
             while (!word.win(word.getGuesses()) && word.getLives() > 0) {
                 word.printGame();

@@ -38,18 +38,26 @@ public class Game {
         return guesses;
     }
 
-    public void printGuesses() {
-
-    }
-
-    public void loseLife() {
-        lives--;
+    public String getWrongGuesses() {
+        String guessList = "";
+        for (int i = 0; i < guesses.length(); i++) {
+            if (!(answer.contains(guesses.substring(i, i + 1)))) {
+                guessList += guesses.charAt(i);
+                if (i < guesses.length() - 1) {
+                    guessList += ", ";
+                }
+            }
+        }
+        return guessList;
     }
 
     public int getLives() {
         return lives;
     }
 
+    public void loseLife() {
+        lives--;
+    }
     public boolean inWord(String ltr) {
         if (answer.contains(ltr)) {
             return true;
@@ -82,8 +90,11 @@ public class Game {
         for (int i = answer.length(); i < 19; i++) {
             System.out.print(" ");
         }
-        System.out.println("|");
-        System.out.println("| You have " + getLives() + " lives   |      Guesses: " + guesses);
-        System.out.println("| Pick a letter:     |");
+        System.out.println("|         Wrong Guesses: " + getWrongGuesses());
+        System.out.println("|                    |");
+        System.out.println("| You have " + getLives() + " lives   |");
+        System.out.println("|--------------------|");
+        System.out.println("Pick a letter: ");
+
     }
 }

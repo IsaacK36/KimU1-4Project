@@ -4,8 +4,13 @@ public class GameRunner {
     public static void main (String[] args) {
         Scanner scan = new Scanner(System.in);
         boolean retry = true;
+        Game word = new Game();
         while (retry == true) {
-            Game word = new Game();
+            System.out.print("You have " + word.getLives() + " lives. Would you like to change this?: ");
+            if (scan.nextLine().equals("y")) {
+                System.out.print("What would you like to set lives to?: ");
+                word = new Game(scan.nextInt());
+            }
             System.out.println();
             while (!word.win(word.getGuesses()) && word.getLives() > 0) {
                 word.printGame();
@@ -15,7 +20,7 @@ public class GameRunner {
                     word.loseLife();
                 }
             }
-            if (word.getLives() != 0) {
+            if ((word.getLives() != 0)) {
                 System.out.println("You Win!");
             } else {
                 System.out.println("You Lose");

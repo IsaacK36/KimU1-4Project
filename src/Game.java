@@ -1,5 +1,7 @@
 public class Game {
     private String answer;
+
+    private String lvl;
     private String guesses;
     private int lives;
 
@@ -27,6 +29,33 @@ public class Game {
             answer = "expedite";
         } else if (r == 0) {
             answer = "eel";
+        }
+    }
+
+    public Game(String lvl) {
+        guesses = "";
+        int r = (int) (Math.random() * 10);
+        if
+        } else if (r == 9) {
+            answer = "arbitrary";
+        } else if (r == 8) {
+            answer = "";
+        } else if (r == 7) {
+            answer = "tarantula";
+        } else if (r == 6) {
+            answer = "quintillion";
+        } else if (r == 5) {
+            answer = "parallelization";
+        } else if (r == 4) {
+            answer = "myrrh";
+        } else if (r == 3) {
+            answer = "squirreled";
+        } else if (r == 2) {
+            answer = "traumatize";
+        } else if (r == 1) {
+            answer = "expedite";
+        } else if (r == 0) {
+            answer = "";
         }
     }
 
@@ -94,7 +123,8 @@ public class Game {
         System.out.println("|                    |");
         System.out.println("| You have " + getLives() + " lives   |");
         System.out.println("|--------------------|");
-        System.out.println("Pick a letter: ");
+        System.out.print("Pick a letter: ");
+        System.out.println();
 
     }
 }

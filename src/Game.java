@@ -35,29 +35,51 @@ public class Game {
     public Game(String lvl) {
         guesses = "";
         int r = (int) (Math.random() * 10);
-        if
-        } else if (r == 9) {
-            answer = "arbitrary";
-        } else if (r == 8) {
-            answer = "";
-        } else if (r == 7) {
-            answer = "tarantula";
-        } else if (r == 6) {
-            answer = "quintillion";
-        } else if (r == 5) {
-            answer = "parallelization";
-        } else if (r == 4) {
-            answer = "myrrh";
-        } else if (r == 3) {
-            answer = "squirreled";
-        } else if (r == 2) {
-            answer = "traumatize";
-        } else if (r == 1) {
-            answer = "expedite";
-        } else if (r == 0) {
-            answer = "";
+        if (lvl.equals("hard")) {
+            if (r == 9) {
+                answer = "arbitrary";
+            } else if (r == 8) {
+                answer = "";
+            } else if (r == 7) {
+                answer = "tarantula";
+            } else if (r == 6) {
+                answer = "quintillion";
+            } else if (r == 5) {
+                answer = "parallelization";
+            } else if (r == 4) {
+                answer = "myrrh";
+            } else if (r == 3) {
+                answer = "squirreled";
+            } else if (r == 2) {
+                answer = "traumatize";
+            } else if (r == 1) {
+                answer = "expedite";
+            } else if (r == 0) {
+                answer = "";
+            }
+        } else if (lvl.equals("normal")) {
+            if (r == 9) {
+                answer = "banana";
+            } else if (r == 8) {
+                answer = "computer";
+            } else if (r == 7) {
+                answer = "science";
+            } else if (r == 6) {
+                answer = "bald";
+            } else if (r == 5) {
+                answer = "camel";
+            } else if (r == 4) {
+                answer = "myrrh";
+            } else if (r == 3) {
+                answer = "squirreled";
+            } else if (r == 2) {
+                answer = "traumatize";
+            } else if (r == 1) {
+                answer = "expedite";
+            } else if (r == 0) {
+                answer = "";
+            }
         }
-    }
 
     public void addGuess(String str) {
         guesses += str;

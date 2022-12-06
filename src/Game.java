@@ -33,13 +33,14 @@ public class Game {
     }
 
     public Game(String lvl) {
+        lives = 6;
         guesses = "";
         int r = (int) (Math.random() * 10);
         if (lvl.equals("hard")) {
             if (r == 9) {
                 answer = "arbitrary";
             } else if (r == 8) {
-                answer = "";
+                answer = "bilingual";
             } else if (r == 7) {
                 answer = "tarantula";
             } else if (r == 6) {
@@ -55,7 +56,7 @@ public class Game {
             } else if (r == 1) {
                 answer = "expedite";
             } else if (r == 0) {
-                answer = "";
+                answer = "cornucopia";
             }
         } else if (lvl.equals("normal")) {
             if (r == 9) {
@@ -69,17 +70,18 @@ public class Game {
             } else if (r == 5) {
                 answer = "camel";
             } else if (r == 4) {
-                answer = "myrrh";
+                answer = "mammoth";
             } else if (r == 3) {
-                answer = "squirreled";
+                answer = "robin";
             } else if (r == 2) {
-                answer = "traumatize";
+                answer = "cancer";
             } else if (r == 1) {
-                answer = "expedite";
+                answer = "calculus";
             } else if (r == 0) {
-                answer = "";
+                answer = "apple";
             }
         }
+    }
 
     public void addGuess(String str) {
         guesses += str;
@@ -87,6 +89,10 @@ public class Game {
 
     public String getGuesses() {
         return guesses;
+    }
+
+    public String getLvl() {
+        return lvl;
     }
 
     public String getWrongGuesses() {

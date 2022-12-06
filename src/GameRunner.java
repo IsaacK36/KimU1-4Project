@@ -3,15 +3,14 @@ import java.util.Scanner;
 public class GameRunner {
     public static void main (String[] args) {
         Scanner scan = new Scanner(System.in);
+        System.out.println("\nH   A   N   G   M   A   N\n");
         boolean retry = true;
         Game word = new Game();
         while (retry == true) {
-            System.out.print("You have " + word.getLives() + " lives. Would you like to change this?: ");
+            System.out.print("The difficulty is set to " + word.getLvl() + ". ");
             if (scan.nextLine().equals("y")) {
-                System.out.print("What would you like to set lives to?: ");
-                word = new Game(scan.nextInt());
+                word = new Game("hard");
             }
-            System.out.println();
             while (!word.win(word.getGuesses()) && word.getLives() > 0) {
                 word.printGame();
                 String guessedLetter = scan.nextLine();

@@ -43,7 +43,7 @@ public class Game {
         int r = (int) (Math.random() * 10);
         if (lvl.equals("hard")) {
             if (r == 9) {
-                answer = "arbitrary";
+                answer = "nymph";
             } else if (r == 8) {
                 answer = "bilingual";
             } else if (r == 7) {
@@ -86,6 +86,14 @@ public class Game {
                 answer = "apple";
             }
         }
+    }
+
+    /**
+     *
+     * @return The method returns the answer
+     */
+    public String getAnswer() {
+        return answer;
     }
 
     /**

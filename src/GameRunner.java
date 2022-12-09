@@ -30,6 +30,8 @@ public class GameRunner {
                 System.out.println("You Lose");
             }
 
+            System.out.println("The word was: " + word.getAnswer());
+
             System.out.print("\nPress y to play again: ");
             if (!(scan.nextLine().equals("y"))) {
                 break;
